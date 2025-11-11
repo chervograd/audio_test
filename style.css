@@ -1,0 +1,36 @@
+:root{
+  --bg:#fff;
+  --fg:#000;
+}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial}
+body{background:var(--bg);color:var(--fg);display:flex;align-items:center;justify-content:center;padding:20px}
+.player{width:100%;max-width:480px;background:var(--bg);border:1px solid #000;border-radius:12px;padding:18px;display:grid;grid-template-columns:120px 1fr;gap:16px;align-items:center}
+.cover-wrap {
+  height: 100%; /* подстраиваемся под высоту плеера */
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cover-wrap img {
+  height: 100%;       /* масштабируем по высоте контейнера */
+  width: auto;        /* ширина подстраивается пропорционально */
+  object-fit: contain; /* сохраняем всю картинку */
+  border-radius: 16px;
+  display: block;
+}
+.controls{display:flex;flex-direction:column;gap:10px}
+.now{display:flex;flex-direction:column}
+#title{font-weight:600}
+#time{font-size:12px;opacity:.7}
+.buttons{display:flex;gap:8px}
+button{background:transparent;border:1px solid #000;padding:8px 10px;border-radius:8px;font-size:16px;cursor:pointer}
+button:active{transform:translateY(1px)}
+#progress{width:100%;appearance:none;height:6px;border-radius:6px;background:transparent}
+.playlist{list-style:none;padding:0;margin:6px 0 0 0;max-height:150px;overflow:auto;border-top:1px solid rgba(0,0,0,.05);padding-top:8px}
+.playlist li{padding:6px 8px;border-radius:6px;cursor:pointer}
+.playlist li.active{background:#000;color:#fff}
+@media (max-width:420px){.player{grid-template-columns:1fr;grid-auto-rows:auto}}
