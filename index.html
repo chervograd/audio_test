@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Minimal Audio Player</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="player">
+    <img src="cover.jpg" alt="cover" class="cover">
+      <img id="cover" src="cover.jpg" alt="Cover" onerror="this.style.display='none'">
+    </div>
+
+    <section class="controls">
+      <div class="now">
+        <div id="title">Выберите трек</div>
+        <div id="time">00:00 / 00:00</div>
+      </div>
+
+      <div class="buttons">
+        <button id="prev" aria-label="previous">⏮</button>
+        <button id="play" aria-label="play">▶</button>
+        <button id="next" aria-label="next">⏭</button>
+      </div>
+
+      <input id="progress" type="range" min="0" max="100" value="0">
+      <ul id="playlist" class="playlist"></ul>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
